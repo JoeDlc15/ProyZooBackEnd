@@ -15,13 +15,16 @@ export class User {
     @Column('text', { nullable: true })
     password: string;
 
-    @Column('bool', { default: false })
+    @Column('bool', { default: true })
     isActive: boolean;
 
     @Column('text', { array: true, default: ['user'] })
     roles: string[];
 
     //TODO: Firebase Auth
-    @Column('text', { unique: true })
+    /*
+    @Column('text', { unique: true, nullable: true })
+    firebaseUuid: string;*/
+    @Column('text', {  nullable: true })
     firebaseUuid: string;
 }
